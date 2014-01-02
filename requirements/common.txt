@@ -1,0 +1,2 @@
+# this requirements text contain requirements
+# shared by both the dev and the production sites
