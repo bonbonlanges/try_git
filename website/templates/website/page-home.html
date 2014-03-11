@@ -1,0 +1,25 @@
+{% extends "website/page.html" %}
+{% load staticfiles %}
+
+{% block html_classes %}html-home{% endblock %}
+{% block page_classes %}home{% endblock %}
+
+{% block page_contents %}
+
+    <h1>Welcome to <em>our site</em></h1>
+    <p>The Sleevie Wonder is a product that allows the user to enjoy their time while getting their hair cut;
+        whether it's having a beverage, checking their cell phone, reading a magazine, even scratching their
+        nose, while keeping hair off of their arms and clothes.  A lovely nylon cape like any other hair cutting
+        cape, but this one- This one has sleeves! Freedom!  The time has come...</p>
+
+    <div>
+        <ul id="features">
+            <li class="feature"><img src="{% static 'website/img/home-feature-1.png' %}" title="Feature 1" alt="Feature 1" /></li>
+            <li class="feature"><img src="{% static 'website/img/home-feature-2.png' %}" title="Feature 2" alt="Feature 2" /></li>
+            <li class="feature"><img src="{% static 'website/img/home-feature-3.png' %}" title="Feature 3" alt="Feature 3" /></li>
+        </ul>
+    </div>
+
+    {% include 'website/snippet-fb-like.html' %}
+
+{% endblock %}

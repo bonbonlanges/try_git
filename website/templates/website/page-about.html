@@ -1,0 +1,58 @@
+{% extends "website/page.html" %}
+{% load staticfiles %}
+
+{% block page_classes %}about{% endblock %}
+
+{% block scripts %}
+
+    <!--load the jquery file-->
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+    <!-- Include the plugin related to the image slider on the product page-->
+    <script src="{% static 'website/js/jquery.flexslider-min.js' %}"></script>
+
+    <!--load the rest of the js files-->
+    <script src="{% static 'website/js/main.js' %}"></script>
+
+{% endblock %}
+
+{% block page_contents %}
+
+    <div id="contents">
+
+        <div id="the-founder">
+            <img src="{% static 'website/img/victoria.png' %}" title="Victoria Blow" alt="Victoria Blow" width="602" height="604" />
+        </div>
+
+        <div id="founder-information">
+            <div class="inner">
+                <h1>The <em>Founder</em></h1>
+                <div id="founder-slider">
+                    <ul class="slides">
+                        <li>The Sleevie Wonder was dreamt up by Victoria Blow while working in a "hip" barber shop
+                            in Los Angeles. She noticed that the professionals who would come in on their lunch hour
+                            or after work would be wearing nice, long sleeved shirts and also have business
+                            to attend to (on their smartphones).</li>
+                        <li>
+                            Realizing that the clients in their dressy work clothes would prefer to be able to continue
+                            about their day without hair all over their sleeves, she thought "There must be a simple
+                            solution!" So the Sleevie Wonder was born, sewn by Victoria's Mom on a 40 year old Singer
+                            Sewing machine and using a salad plate as a neck hole template.
+                        </li>
+                        <li>As the development progressed, Victoria noticed that clients can also benefit from
+                            having sleeves when they are reading or enjoying a beverage while they are in the chair.
+                            She made the sleeves extra long and the openings wide to accommodate a tall beverage
+                            to be held "shrugged" into the sleeve.</li>
+                    </ul>
+                </div>
+                <h2><em>Victoria</em>Blow</h2>
+                <h3><em>Founder,</em> The Sleevie Wonder</h3>
+
+            </div>
+        </div>
+
+        <div class="clear"></div>
+
+    </div>
+
+{% endblock %}

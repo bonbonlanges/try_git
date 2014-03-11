@@ -1,0 +1,50 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html class="{% block html_classes %}{% endblock %}">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        <title>{% block page_title %}{% endblock %}</title>
+
+        <!--load css-->
+        <link rel="stylesheet" type="text/css" href="{% static 'website/css/normalize.css' %}" media="screen"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'website/css/styles.css' %}" media="screen"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'website/css/bjqs.css' %}" media="screen"/>
+
+        <!--load the Web Font Loader script for asynchronous calling, lessening lags while loading the page-->
+        <script src="//ajax.googleapis.com/ajax/libs/webfont/1/webfont.js"></script>
+        <script>
+            WebFont.load({
+                google: {
+                    families: [
+                        'Open Sans:300,400,600,700,800'
+                    ],
+                    timeout: 5000 // timeout to 10 seconds
+                }
+            });
+        </script>
+
+    </head>
+
+    <body class="{% block page_classes %}{% endblock %}">
+        {% include 'website/snippet-fb-js-sdk.html' %}
+
+        <div id="decorative-border"></div>
+        <div id="wrapper">
+            <!--header here, along with the site logo-->
+            {% include 'website/header.html' with logo_version=logo_version %}
+
+            <!--page contents here-->
+            <main>{% block page_contents %}{% endblock %}</main>
+            <div class="push"></div>
+        </div>
+
+
+        <!--footer here-->
+        {% include 'website/footer.html' %}
+
+        {% block scripts %}
+
+        {% endblock %}
+
+    </body>
+</html>

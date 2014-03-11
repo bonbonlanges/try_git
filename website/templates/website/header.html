@@ -1,0 +1,19 @@
+{% load staticfiles %}
+
+<header>
+    <ul id="left-main-menu">
+        <li><a href="/" id="link-home">Home</a></li>
+        <li><a href="/product" id="link-product">The Product</a></li>
+    </ul>
+    <ul id="right-main-menu">
+        <li><a href="/about" id="link-about">About Me</a></li>
+        <li><a href="/contact" id="link-contact">Contact</a></li>
+    </ul>
+
+    <div id="logo-container">
+        <a href="/">
+            <img src="{% if logo_version == 'dark' %}{% static 'website/img/logo-version-dark.png' %}{% else %}{% static 'website/img/logo-version-light.png' %}{% endif %}"
+                    id="logo" title="The Sleevie Wonder" alt="The Sleevie Wonder" />
+        </a>
+    </div>
+</header>

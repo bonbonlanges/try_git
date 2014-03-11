@@ -1,0 +1,58 @@
+{% extends "website/page.html" %}
+{% load staticfiles %}
+
+{% block page_classes %}contact{% endblock %}
+
+{% block page_contents %}
+
+    <div id="contents" class="{{ form_status }}">
+
+        {% if form_status == 'valid' %}
+
+        <p class="thank-you">Thank you for that message!</p>
+        <p class="thank-you"><em>We’ll try our best to answer back to you soon.</em></p>
+        <p id="go-home-p"><a href="/" id="go-home-button" title="Go back to home">Go back to home</a></p>
+
+        {% else %}
+
+        <div id="stray-images-container">
+            <img src="{% static 'website/img/contact-hippie-1.png' %}" width="173" height="173" id="contact-hippie-1" />
+            <img src="{% static 'website/img/contact-hippie-2.png' %}" width="172" height="172" id="contact-hippie-2" />
+        </div>
+
+        <h1>Send us a <em>message</em></h1>
+        <p class="blurb">
+            {% if form.errors %}
+                Aww. You can’t send the message with empty or incomplete details. Please fill-out the form.
+            {% else %}
+                Got any questions? Inquiries or suggestions? Or simply say hello to us.<br />
+                We’d be happy to receive a message!
+            {% endif %}
+        </p>
+
+
+        <form id="contact-us" method="post" name="contact_form">
+            {% csrf_token %}
+            <div id="row-fullname" class="{% if form.fullname.errors %}error{% endif %} form-row">
+                <div class="inner">{{ form.fullname }}</div>
+            </div>
+
+            <div id="row-email" class="{% if form.email.errors %}error{% endif %} form-row">
+                <div class="inner">{{ form.email }}</div>
+            </div>
+
+            <div class="form-row textarea {% if form.message.errors %}error{% endif %}" id="row-message">
+                <div class="inner">{{ form.message }}</div>
+            </div>
+
+            <div id="row-submit-button">
+                <input type="submit" value="Send the message!" name="submit" id="submit-message" />
+            </div>
+
+        </form>
+
+        {% endif %}
+
+    </div>
+
+{% endblock %}

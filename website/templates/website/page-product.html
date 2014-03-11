@@ -1,0 +1,73 @@
+{% extends "website/page.html" %}
+{% load staticfiles %}
+
+{% block page_classes %}product{% endblock %}
+
+{% block scripts %}
+
+    <!--load the jquery file-->
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+    <!-- Include the plugin related to the image slider on the product page-->
+    <script src="{% static 'website/js/jquery.flexslider-min.js' %}"></script>
+
+    <!--load the rest of the js files-->
+    <script src="{% static 'website/js/main.js' %}"></script>
+
+{% endblock %}
+
+{% block page_contents %}
+    <div id="product-slider">
+        <ul class="slides">
+            <li>
+                <div class="product-image">
+                    <img src="{% static 'website/img/product-1.png' %}" />
+                </div>
+                <div class="product-description">
+                    <div class="inner">
+                        <h1>The <em>Product</em></h1>
+                        <p>The Sleevie Wonder is a salon or barber shop haircutting cape - but with sleeves! Made
+                            from durable, water-resistant polyester nylon, it repels hair and water and is machine
+                            washable.</p>
+                    </div>
+                </div>
+                <div class="clear"></div>
+
+            </li>
+            <li>
+                <div class="product-image">
+                    <img src="{% static 'website/img/product-2.png' %}" />
+                </div>
+                <div class="product-description">
+                    <div class="inner">
+                        <h1>The <em>Product</em></h1>
+                        <p>It fastens in the back with overlapping hooks for infinitely variable options
+                            for any sized neck. The neck opening is also elasticized for a snug yet comfortable fit.</p>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </li>
+            <li>
+                <div class="product-image">
+                    <img src="{% static 'website/img/product-3.png' %}" />
+                </div>
+                <div class="product-description">
+                    <div class="inner">
+                        <h1>The <em>Product</em></h1>
+                        <p>The sleeves are extra-long and widen at the opening to "shrug" a hand holding a
+                            beverage away from falling hair. Adding sleeves to a standard hair-cutting cape
+                            allows the client to express themselves freely, without getting hair or products
+                            on their clothes or skin.</p>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </li>
+        </ul>
+
+    </div>
+
+
+
+    <div class="clear"></div>
+
+{% endblock %}
